@@ -1,0 +1,159 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head><script async src="https://www.googletagmanager.com/gtag/js?id=G-D47TCQ94D6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-D47TCQ94D6');
+  </script><meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+      Hub |
+    
+    Jen Wachter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300;1,700&display=swap"
+    rel="stylesheet">
+
+<link href="/css/main.css" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/images/favicon/site.webmanifest">
+</head>
+<body>
+
+  <header>
+    <div class="title-container">
+      <a href="/">Jen Wachter</a>
+      <p>Web Developer</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/projects/">projects</a></li>
+        <li><a href="/resume.pdf">resume</a></li>
+        
+        <li>
+          <a href="https://github.com/jenwachter"><svg viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg" class="github">
+  <title>GitHub</title>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" />
+</svg>
+</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <main>
+      
+
+  <h1>Hub</h1>
+
+  
+
+  
+    
+  
+
+  
+
+  <div class="content-container has-aside">
+    <div class="body">
+      
+      <p><a href="https://hub.jhu.edu/">The Hub</a> launched in 2013 as the online source of news from Johns Hopkins University. Since then, it has grown into the home of not only news, but also announcements, events, photo galleries, and faculty profiles.</p>
+<p>The Hub uses WordPress as its content management system, but only a small portion of the content is crafted <em>in</em> WordPress. There are two types of content on the Hub:</p>
+<ul>
+<li>
+<p><strong>Content that is managed by rewrite rules.</strong> The core of the Hub is its article, announcement, event, gallery, and faculty profile pages, whose data is fetched from the <a href="/projects/hubapi/">Hub API</a>. Requests for these types of content are caught by custom rewrite rules, passed to a controller to facilitate fetching the data from the API, transforming it as needed to populate the data model, which is then passed to the view layer to render the content to the user.</p>
+</li>
+<li>
+<p><strong>Content built in WordPress.</strong> The remaining content on the Hub consists of mostly static pages and editorially curated collections of content. These pages are crafted in WordPress using a modular page-building system created with the Advanced Custom Fields plugin to create a block-style editor years before it became the standard with the <a href="https://wordpress.org/gutenberg/">Gutenberg editor</a>. Examples of this type of content include the homepage, topical section fronts, and Johns Hopkins Magazine issues.</p>
+</li>
+</ul>
+<h2 id="hub-api-content-picker-plugin">Hub API content picker plugin</h2>
+<p>Selecting content from the Hub API to include on WordPress-crafted pages of the Hub is accomplished via the <a href="https://github.com/johnshopkins/acf-hub-api">
+
+
+
+  <svg viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg" class="github">
+  <title>GitHub</title>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" />
+</svg>
+
+ Hub API Content Picker plugin</a>, developed to work with the Advanced Custom Fields plugin. Built in React and fully tested using JavaScript Testing library and Jest, the plugin validates user designations before a post can be saved and allows field administrators to define rules around the types of content that can be selected.</p>
+<h2 id="conversions">Conversions</h2>
+<p>Conversions are actions that a user may take to demonstrate an interest in a piece of content; for example, when a user shares an article, a conversion is sent to the <a href="/projects/hubapi/">Hub API</a> via a POST request. Some conversions, such as sharing an article on social media, are given a higher weight than other conversions, such as simply viewing an article.</p>
+<p>Using the conversion data, every article, announcement, and event is assigned a score, which is a numerical representation of that item&rsquo;s popularity on the Hub. Scores are calculated every 15 minutes by tallying the conversions attributed to each content item using a sliding 3-day window of data. Scores are used to populate various &ldquo;trending&rdquo; feeds across the Hub.</p>
+<h2 id="evolution-over-the-years">Evolution over the years</h2>
+<ul>
+<li><strong>2013: Hub website launches.</strong> At launch, both the website&rsquo;s front and back ends are built using <a href="https://www.slimframework.com/">Slim Framework</a> as the foundation for the MVC application. A streamlined, custom content management system controls the creation of pages like the homepage and section fronts, while article pages are generated from data in the <a href="/projects/hubapi/">Hub API</a>.</li>
+<li><strong>2014: <a href="https://hub.jhu.edu/announcements/">Announcements section</a> launches.</strong> Announcements, which were previously communicated to faculty, staff, and students through a daily email, are moved into the Hub. Having a presence in the Hub allows announcements to be more detailed, as the entire content of an announcement is no longer constrained to an email alongside other announcements. Additionally, the creation of the daily email is moved to an automated process that generates the email using API data and schedules it for delivery using the MailChimp API.</li>
+<li><strong>2015: <a href="https://hub.jhu.edu/at-work/">At Work section</a> launches.</strong> For over 40 years, the <a href="https://hub.jhu.edu/gazette/archive/">Gazette</a> was the source of news for faculty, staff, and students at Johns Hopkins University. Publishing ceased in 2015 in favor of the At Work section on the Hub.</li>
+<li><strong>2016</strong>
+<ul>
+<li><strong><a href="https://hub.jhu.edu/events/">Events section</a> launches.</strong> Stakeholders from around the university are invited to submit events for inclusion in the Hub event calendar. Divisions from across the University begin using the Hub calendar to promote their events. Upcoming events are added to the daily announcements email.</li>
+<li><strong>Integration with CDN.</strong> The Hub experienced its first significant downtime on June 23, 2016, when <a href="https://hub.jhu.edu/2016/06/16/dark-matter-in-primordial-black-hole-collision/">a Hub article</a> made it to the top 10 of shared posts on Reddit. The sudden spike in global traffic crashed the server that served the Hub and prompted an expedited effort to integrate CDN caching and cloud storage (using Akamai). The Hub has experienced nearly 100% uptime since the integration.</li>
+</ul>
+</li>
+<li><strong>2017: Migration to WordPress.</strong> The custom content management system is retired in favor of WordPress. A series of migration scripts are developed to automate the migration process, eliminate frontend downtime, and minimize backend downtime.</li>
+<li><strong>2020</strong>
+<ul>
+<li><strong><a href="https://hub.jhu.edu/experts/">Faculty Experts guide</a> launches.</strong> Enables members of the media to easily find subject matter experts through a searchable database of relevant faculty and topics.</li>
+<li><strong>Images are made responsive.</strong> This led to lower bandwidth usage, higher-quality images, and faster load times across all devices.</li>
+</ul>
+</li>
+<li><strong>2021: Stand-alone galleries launch.</strong> Photo galleries no longer need to be a <em>part</em> of another piece of content; they can stand on their own.</li>
+<li><strong>2022: Automatic publication issue generation.</strong> Each publication issue is automatically generated in WordPress using data from the Hub API, while still allowing editors to add/modify/remove content as they see fit.</li>
+</ul>
+
+    </div>
+    
+      <aside>
+        <h2 id="links-of-interest">Links of interest</h2>
+<ul>
+<li><a href="https://hub.jhu.edu">Hub homepage</a></li>
+<li>Section front: <a href="https://hub.jhu.edu/arts-culture/">Arts+Culture</a></li>
+<li>Article: <a href="https://hub.jhu.edu/2024/03/13/seeing-baltimore-through-a-new-lens/">Seeing Baltimore through a new lens</a></li>
+<li>Gallery: <a href="https://hub.jhu.edu/gallery/2024/03/14/photos-of-the-week-march-13-2024/">This week in Jay-pegs</a></li>
+<li><a href="https://hub.jhu.edu/events/">Events calendar</a></li>
+<li>Publication: <a href="https://hub.jhu.edu/magazine/">Johns Hopkins Magazine</a></li>
+<li>Publication issue: <a href="https://hub.jhu.edu/magazine/2023/winter/">Johns Hopkins Magazine Winter 2023</a></li>
+<li><a href="https://github.com/johnshopkins/acf-hub-api">
+
+
+
+  <svg viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg" class="github">
+  <title>GitHub</title>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" />
+</svg>
+
+ Hub API Content Picker</a></li>
+</ul>
+<h2 id="awards">Awards</h2>
+<ul>
+<li>Grand Gold CASE, Innovative use of technology, 2013</li>
+</ul>
+
+      </aside>
+    
+  </div>
+
+    </main>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Jen Wachter. All rights reserved.</p>
+    <p><a href="mailto:mail@jenwachter.com">mail@jenwachter.com</a></p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head><script async src="https://www.googletagmanager.com/gtag/js?id=G-D47TCQ94D6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-D47TCQ94D6');
+  </script><meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+      Hopkins Huddle |
+    
+    Jen Wachter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300;1,700&display=swap"
+    rel="stylesheet">
+
+<link href="/css/main.css" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/images/favicon/site.webmanifest">
+</head>
+<body>
+
+  <header>
+    <div class="title-container">
+      <a href="/">Jen Wachter</a>
+      <p>Web Developer</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/projects/">projects</a></li>
+        <li><a href="/resume.pdf">resume</a></li>
+        
+        <li>
+          <a href="https://github.com/jenwachter"><svg viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg" class="github">
+  <title>GitHub</title>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" />
+</svg>
+</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <main>
+      
+
+  <h1>Hopkins Huddle</h1>
+
+  
+
+  
+    
+  
+
+  
+
+  <div class="content-container has-aside">
+    <div class="body">
+      
+        <h2>The 2023 message of thanks sent to faculty, staff, students, and alumni of Johns Hopkins University.</h2>
+      
+      <p><strong>Concept:</strong> A series of 6 Wordle-esque puzzles whose answers come together to help craft a message of thanks from the president of the university. As each puzzle is completed, a part of the message is revealed. Once all puzzles are completed, the user is presented with the entire message.</p>
+<p>This application was custom-built using React and tested using JavaScript Testing Library and Jest. There are two parts to the application: the stand-alone word puzzle and the multi-page game application.</p>
+<h2 id="puzzle">Puzzle</h2>
+<p>The puzzle application consists of the word puzzle and a feedback mechanism for when the user either completes the puzzle or fails to complete the puzzle. A user&rsquo;s progress through an individual puzzle is stored in their browser&rsquo;s local storage, allowing the user to leave the puzzle and return to it later without worrying about losing data.</p>
+<p>When a user completes a puzzle, the <code>onPuzzleComplete</code> callback (passed through the puzzle&rsquo;s initialization properties) is called. In this case, this callback originates in the game application.</p>
+<p>See the code: <a href="https://github.com/johnshopkins/hopkins-hurdle">
+
+
+
+  <svg viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg" class="github">
+  <title>GitHub</title>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" />
+</svg>
+
+ johnshopkins/hopkins-hurdle</a></p>
+<h2 id="game">Game</h2>
+<p>The game application defines the structure of the game and guides the user through the experience. Starting on the homepage, the user is invited to begin the game. If the user decides to play, they are directed to the first puzzle in the set. With the completion of each puzzle, a new piece of the message is revealed. When all puzzles are complete, the user is sent to a page with the full message from the university president, tying all the puzzle answers together.</p>
+<p>In addition to guiding the user through the game, the game app also:</p>
+<ul>
+<li>Keeps track of a user&rsquo;s progress through the 6 puzzles using the browser&rsquo;s local storage.</li>
+<li>Reports various user interactions and milestones to Google Analytics to provide an in-depth understanding of user engagement.</li>
+<li>Ensures a user completes all puzzles in order, without skipping ahead. If a user attempts to access a puzzle out of order, they are redirected to the correct puzzle.</li>
+<li>Adds navigation between completed puzzles.</li>
+</ul>
+<p>See the code: <a href="https://github.com/johnshopkins/hopkins-huddle">
+
+
+
+  <svg viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg" class="github">
+  <title>GitHub</title>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" />
+</svg>
+
+ johnshopkins/hopkins-huddle</a></p>
+
+    </div>
+    
+      <aside>
+        <h2 id="links-of-interest">Links of interest</h2>
+<ul>
+<li><a href="https://thankyou.jhu.edu/2023/">Play the game</a></li>
+<li><a href="https://github.com/johnshopkins/hopkins-hurdle">
+
+
+
+  <svg viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg" class="github">
+  <title>GitHub</title>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" />
+</svg>
+
+ Puzzle</a></li>
+<li><a href="https://github.com/johnshopkins/hopkins-huddle">
+
+
+
+  <svg viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg" class="github">
+  <title>GitHub</title>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" />
+</svg>
+
+ Game</a></li>
+</ul>
+
+      </aside>
+    
+  </div>
+
+    </main>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Jen Wachter. All rights reserved.</p>
+    <p><a href="mailto:mail@jenwachter.com">mail@jenwachter.com</a></p>
+  </footer>
+
+</body>
+</html>

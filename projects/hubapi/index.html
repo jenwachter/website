@@ -1,0 +1,138 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head><script async src="https://www.googletagmanager.com/gtag/js?id=G-D47TCQ94D6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-D47TCQ94D6');
+  </script><meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+      Hub API |
+    
+    Jen Wachter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300;1,700&display=swap"
+    rel="stylesheet">
+
+<link href="/css/main.css" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/images/favicon/site.webmanifest">
+</head>
+<body>
+
+  <header>
+    <div class="title-container">
+      <a href="/">Jen Wachter</a>
+      <p>Web Developer</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/projects/">projects</a></li>
+        <li><a href="/resume.pdf">resume</a></li>
+        
+        <li>
+          <a href="https://github.com/jenwachter"><svg viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg" class="github">
+  <title>GitHub</title>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" />
+</svg>
+</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <main>
+      
+
+  <h1>Hub API</h1>
+
+  
+
+  
+    
+  
+
+  
+
+  <div class="content-container has-aside">
+    <div class="body">
+      
+      <p>The <a href="https://api.hub.jhu.edu">Hub API</a> enables authorized users to interact with data from the Hub database, a central repository of news articles, events, announcements, photo galleries, and faculty experts from Johns Hopkins University.</p>
+<p>See the <a href="https://api.hub.jhu.edu/docs/">API documentation</a> for a detailed usage guide. Keep in mind that the documentation is designed for general consumers of the API; therefore, is not all-inclusive of the API&rsquo;s capabilities.</p>
+<h2 id="the-back-end">The back end</h2>
+<p>The Hub API uses headless Drupal to store and manage its content, taxonomies, and files. Each type of content and taxonomy has a corresponding endpoint in the API.</p>
+<h3 id="content-first-philosophy">Content-first philosophy</h3>
+<!-- raw HTML omitted -->
+<h3 id="image-processing">Image processing</h3>
+<p>For every image uploaded to Drupal, approximately 30 distinct crop sizes are generated, consisting of hard and soft crops at various sizes. These variations are used to facilitate responsive image loading in various scenarios on the Hub website.</p>
+<p>Normally, Drupal creates these images on-demand when they are requested, but the Hub&rsquo;s files are served from a CDN; therefore, the crop sizes need to be generated and made available in the CDN as soon as the original image is uploaded. To avoid prolonged processing times for users, the generation of the sizes and their subsequent synchronization to cloud storage is sent to a <a href="https://github.com/jenwachter/php-redis-queue">background server queue</a>. Passing this work off to a queue allows the user to  continue with their work while the image is processed in the background.</p>
+<h2 id="the-front-end">The front end</h2>
+<p>The API front end is a custom-built Model-View-Controller (MVC) application that uses <a href="https://www.slimframework.com/">Slim</a> as the underlying framework. Authentication, authorization, and validation are handled via application middleware.</p>
+<h3 id="abstraction">Abstraction</h3>
+<p>Within the application, interactions with Drupal are abstracted away into a CMS/database adapter, which keeps CMS-dependent logic separate from the application layer. As a result, CMS upgrades or a migration to a completely different CMS does not require any changes in the core application; only the adapter needs to be modified.</p>
+<h3 id="authentication-and-authorization">Authentication and authorization</h3>
+<p>Affiliates of Johns Hopkins University can request access to the API, which is granted in the form of an API key. An API key does not open the entirety of the API to the user; instead, each key represents a set of privileges that are evaluated when requests are made to the API. For example, most API keys are given GET request access to content endpoints with limited response data.</p>
+<h3 id="caching-strategy">Caching strategy</h3>
+<p>To ensure quick response times, the API has two layers of cache:</p>
+<ul>
+<li>an outer layer that uses an external CDN</li>
+<li>an inner layer within the origin web servers</li>
+</ul>
+<p>The outer layer is unsophisticated, as it relies on the URI to create the cache key; therefore each API user&rsquo;s requests are cached individually due to the user-specific API key that is required in the query string of each request. Even if two users make the same request outside of their API key, the responses are cached separately in the CDN.</p>
+<p>The inner layer is more sophisticated, as it can use private data — such as a user&rsquo;s privilege level — to group a larger number of requests in the same cache key. Identical requests made by users of the same privilege level will share the same cache key, making up for some of the shortcomings of the outer cache layer.</p>
+<h2 id="evolution-over-the-years">Evolution over the years</h2>
+<ul>
+<li><strong>2013: Hub API launches.</strong> Utilizing Drupal 7 as the content management system, article, file, and taxonomy endpoints are made available in the API with basic documentation provided to users. Articles are fairly basic at this point, with images being the only type of content that can be embedded within them.</li>
+<li><strong>2014: Campus announcements transition to the Hub API.</strong> Previously, campus announcements were distributed to faculty, staff, and students through a manually generated daily email. As part of this launch, not only are announcements now available via the API and Hub website, but the creation of the daily email moved to an automated process that generates the email using API data and schedules it for delivery using the MailChimp API.</li>
+<li><strong>2015: Embeddable photo galleries launch.</strong> Photo galleries can be created and embedded within the body of an announcement or article.</li>
+<li><strong>2016</strong>
+<ul>
+<li><strong>Events launch.</strong> Stakeholders from around the university are invited to submit their events for inclusion in the <a href="https://hub.jhu.edu/events/">Hub event calendar</a>. Divisions from across the University begin using the Hub calendar to promote their events.</li>
+<li><strong>Additional embeddable content is made available.</strong> Editors can now embed videos, teasers, pull quotes, section breaks, and drop-caps within content.</li>
+</ul>
+</li>
+<li><strong>2017: CDN integration.</strong> All traffic to the API is routed through a CDN (Akamai) with caching rules designed to make the API as fast and efficient as possible. Files are stored and served from cloud storage instead of the API&rsquo;s origin servers.</li>
+<li><strong>2018: Refactor of API source code and unit tests.</strong> Using code profiling reports, bloat and inefficiencies are identified and removed, resulting in an approximate 43% time cost reduction across sampled endpoints.</li>
+<li><strong>2019: Recurring events launch.</strong> Previously, if an event had multiple instances, a separate event record needed to be created for each instance. With the launch of recurring events, these instances can now be created within the same event record.</li>
+<li><strong>2020: Faculty profiles launch.</strong> Faculty profiles are included in the API to power the <a href="https://hub.jhu.edu/experts/">Faculty Experts Guide</a>.</li>
+<li><strong>2021: Stand-alone photo galleries launch.</strong> Photo galleries no longer need to be part of another piece of content; they can stand on their own.</li>
+<li><strong>2022: Migration to Drupal 9.</strong> Executed the migration of the API frontend, CMS backend, and 60K content nodes from Drupal 7 to 9 with zero frontend downtime.</li>
+</ul>
+
+    </div>
+    
+      <aside>
+        <h2 id="links-of-interest">Links of interest</h2>
+<ul>
+<li><a href="https://api.hub.jhu.edu/docs/">API documentation</a></li>
+<li><a href="https://hub.jhu.edu/">Hub</a>: the Johns Hopkins University news and events website, powered by the API</li>
+</ul>
+<h2 id="awards">Awards</h2>
+<ul>
+<li>Grand Gold CASE, Innovative use of technology, 2013</li>
+</ul>
+
+      </aside>
+    
+  </div>
+
+    </main>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Jen Wachter. All rights reserved.</p>
+    <p><a href="mailto:mail@jenwachter.com">mail@jenwachter.com</a></p>
+  </footer>
+
+</body>
+</html>
