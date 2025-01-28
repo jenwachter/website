@@ -70,8 +70,6 @@
 <p>See the <a href="https://api.hub.jhu.edu/docs/">API documentation</a> for a detailed usage guide. Keep in mind that the documentation is designed for general consumers of the API; therefore, is not all-inclusive of the API&rsquo;s capabilities.</p>
 <h2 id="the-back-end">The back end</h2>
 <p>The Hub API uses headless Drupal to store and manage its content, taxonomies, and files. Each type of content and taxonomy has a corresponding endpoint in the API.</p>
-<h3 id="content-first-philosophy">Content-first philosophy</h3>
-<!-- raw HTML omitted -->
 <h3 id="image-processing">Image processing</h3>
 <p>For every image uploaded to Drupal, approximately 30 distinct crop sizes are generated, consisting of hard and soft crops at various sizes. These variations are used to facilitate responsive image loading in various scenarios on the Hub website.</p>
 <p>Normally, Drupal creates these images on-demand when they are requested, but the Hub&rsquo;s files are served from a CDN; therefore, the crop sizes need to be generated and made available in the CDN as soon as the original image is uploaded. To avoid prolonged processing times for users, the generation of the sizes and their subsequent synchronization to cloud storage is sent to a <a href="https://github.com/jenwachter/php-redis-queue">background server queue</a>. Passing this work off to a queue allows the user to  continue with their work while the image is processed in the background.</p>
@@ -130,7 +128,7 @@
   </div>
 
   <footer>
-    <p>&copy; 2024 Jen Wachter. All rights reserved.</p>
+    <p>&copy; 2025 Jen Wachter. All rights reserved.</p>
     <p><a href="mailto:mail@jenwachter.com">mail@jenwachter.com</a></p>
   </footer>
 
